@@ -126,8 +126,9 @@ function controls(frameWidth, scollWidth) {
         return;
       }
 
-      if((Math.round(sliderCount) - 1) - currentSliderCount === 1){
+      if((Math.round(sliderCount) - 1) - currentSliderCount <= 1){
         next.style.display = 'none';
+        prev.style.display = 'block';
       }else if (currentSliderCount >= sliderCount - 1) {
         document.querySelector(".slider-container").style.left = 0;
         currentSliderCount = 0;
@@ -157,8 +158,9 @@ function controls(frameWidth, scollWidth) {
 
       currentSliderCount--;
     console.log(currentSliderCount);
-     if(currentSliderCount === 0){
+     if(currentSliderCount <= 0){
         prev.style.display = 'none';
+        next.style.display = 'block';
       }else if(currentSliderCount < sliderCount){
         next.style.display = 'block';
       } 
